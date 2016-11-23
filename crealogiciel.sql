@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 17 Novembre 2016 à 08:39
+-- Généré le :  Mer 23 Novembre 2016 à 09:10
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `categorie` (
   `idcat` int(11) NOT NULL AUTO_INCREMENT,
   `libcat` varchar(50) NOT NULL,
+  `valide` tinyint(1) NOT NULL,
   PRIMARY KEY (`idcat`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
@@ -36,11 +37,11 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 -- Contenu de la table `categorie`
 --
 
-INSERT INTO `categorie` (`idcat`, `libcat`) VALUES
-(1, 'etudiant'),
-(2, 'eleve'),
-(3, 'professeur '),
-(4, 'ogec');
+INSERT INTO `categorie` (`idcat`, `libcat`, `valide`) VALUES
+(1, 'etudiant', 1),
+(2, 'eleve', 1),
+(3, 'professeur ', 1),
+(4, 'ogec', 1);
 
 -- --------------------------------------------------------
 
@@ -105,6 +106,7 @@ CREATE TABLE IF NOT EXISTS `credit` (
 CREATE TABLE IF NOT EXISTS `produits` (
   `idproduits` int(11) NOT NULL AUTO_INCREMENT,
   `libproduits` varchar(50) NOT NULL,
+  `valide` tinyint(1) NOT NULL,
   PRIMARY KEY (`idproduits`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
@@ -112,10 +114,10 @@ CREATE TABLE IF NOT EXISTS `produits` (
 -- Contenu de la table `produits`
 --
 
-INSERT INTO `produits` (`idproduits`, `libproduits`) VALUES
-(1, 'cafe'),
-(2, 'bol de riz'),
-(3, 'repas normal');
+INSERT INTO `produits` (`idproduits`, `libproduits`, `valide`) VALUES
+(1, 'cafe', 1),
+(2, 'bol de riz', 1),
+(3, 'repas normal', 1);
 
 -- --------------------------------------------------------
 
@@ -144,6 +146,7 @@ CREATE TABLE IF NOT EXISTS `tarif` (
   `idcat` int(11) NOT NULL,
   `tarifN` float NOT NULL,
   `tarifF` float NOT NULL,
+  `valide` tinyint(1) NOT NULL,
   PRIMARY KEY (`idproduits`,`idcat`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -151,11 +154,11 @@ CREATE TABLE IF NOT EXISTS `tarif` (
 -- Contenu de la table `tarif`
 --
 
-INSERT INTO `tarif` (`idproduits`, `idcat`, `tarifN`, `tarifF`) VALUES
-(3, 2, 6, 5.2),
-(3, 1, 6, 5.2),
-(3, 3, 5.2, 5.2),
-(3, 4, 2.4, 2.4);
+INSERT INTO `tarif` (`idproduits`, `idcat`, `tarifN`, `tarifF`, `valide`) VALUES
+(3, 2, 6, 5.2, 1),
+(3, 1, 6, 5.2, 1),
+(3, 3, 5.2, 5.2, 1),
+(3, 4, 2.4, 2.4, 1);
 
 -- --------------------------------------------------------
 
@@ -167,6 +170,7 @@ CREATE TABLE IF NOT EXISTS `typeclients` (
   `idtypeclients` int(11) NOT NULL AUTO_INCREMENT,
   `libtypeclients` varchar(50) NOT NULL,
   `idcat` int(11) NOT NULL,
+  `valide` tinyint(1) NOT NULL,
   PRIMARY KEY (`idtypeclients`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
@@ -174,16 +178,16 @@ CREATE TABLE IF NOT EXISTS `typeclients` (
 -- Contenu de la table `typeclients`
 --
 
-INSERT INTO `typeclients` (`idtypeclients`, `libtypeclients`, `idcat`) VALUES
-(1, 'TS2 SIO', 1),
-(2, 'TS1 SIO', 1),
-(3, 'TS1 Tourisme', 1),
-(4, 'TS2 Tourisme', 2),
-(5, '2nd STMG', 2),
-(6, '1ere STMG', 2),
-(7, 'Terminal STMG', 4),
-(8, 'ogec', 1),
-(9, 'professeur', 3);
+INSERT INTO `typeclients` (`idtypeclients`, `libtypeclients`, `idcat`, `valide`) VALUES
+(1, 'TS2 SIO', 1, 1),
+(2, 'TS1 SIO', 1, 1),
+(3, 'TS1 Tourisme', 1, 1),
+(4, 'TS2 Tourisme', 1, 1),
+(5, '2nd STMG', 2, 1),
+(6, '1ere STMG', 2, 1),
+(7, 'Terminal STMG', 2, 1),
+(8, 'ogec', 4, 1),
+(9, 'professeur', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -194,6 +198,7 @@ INSERT INTO `typeclients` (`idtypeclients`, `libtypeclients`, `idcat`) VALUES
 CREATE TABLE IF NOT EXISTS `typerepas` (
   `idtyperepas` int(11) NOT NULL AUTO_INCREMENT,
   `libtyperepas` varchar(50) NOT NULL,
+  `valide` tinyint(1) NOT NULL,
   PRIMARY KEY (`idtyperepas`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -201,9 +206,9 @@ CREATE TABLE IF NOT EXISTS `typerepas` (
 -- Contenu de la table `typerepas`
 --
 
-INSERT INTO `typerepas` (`idtyperepas`, `libtyperepas`) VALUES
-(1, 'midi'),
-(2, 'soir');
+INSERT INTO `typerepas` (`idtyperepas`, `libtyperepas`, `valide`) VALUES
+(1, 'midi', 1),
+(2, 'soir', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
