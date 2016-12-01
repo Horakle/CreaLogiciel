@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Self Lycée Bahuet</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom Fonts -->
+        <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+        <!-- Theme CSS -->
+        <link href="css/grayscale.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    
+    <!-- EXPLICATION -->
+    <!-- Pour les différents id :
+    "nav" au début correspond à la barre de navigation
+    "o" au début correspond aux onglets de la page principale 
+    chbx = checkbox -->
+    <!-- FIN EXPLICATION -->
+
+    </head>
+
+    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand page-scroll" id="navintro"> Self Bahuet </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                    <ul class="nav navbar-nav">
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <button class="btn-ong page-scroll" id="navcompte">Compte</button>
+                        </li>
+                        <li>
+                            <button class="btn-ong page-scroll" id="navrechargement">Rechargement</button>
+                        </li>
+                        <li>
+                            <button class="btn-ong page-scroll" id="navins">Inscrits/Inscriptions</button>
+                        </li>
+                        <li class="dropdown dropdown-ong">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Comptabilité<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><button class="btn-dropdown btn-block" id="navtarifs">Tarifs</button></li>
+                                <li><button class="btn-dropdown btn-block" id="navcat">Catégorie</button></li>
+                                <li><button class="btn-dropdown btn-block" id="navstats">Stats</button></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <!-- Intro Header -->
+        <header class="intro" id="intro">
+            <div class="intro-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <h1 class="brand-heading">Self Bahuet</h1>
+                            <p class="intro-text">Bienvenue sur le site du self Bahuet</p>
+                            <p class="brand-body">Veuillez choisir un onglet s'il vous plaît</p>
+                            <a id="ocompte" class="btn btn-danger">Compte</a>
+                            <a id="orechargement" class="btn btn-danger">Rechargement</a>
+                            <a id="oins" class="btn btn-danger">Inscrits/Inscriptions</a>
+                            <!-- Example single danger button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Comptabilité <span class="glyphicon glyphicon-chevron-down"></span></button>
+                                <div class="dropdown-menu" style="text-align: center;">
+                                    <a class="dropdown-item btn-dropdown btn-block" href="#" id="otarifs">Tarifs</a>
+                                    <a class="dropdown-item btn-dropdown btn-block" href="#" id="ocat">Catégories</a>
+                                    <a class="dropdown-item btn-dropdown btn-block" href="#" id="ostats">Stats</a>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <footer>
+                                <p>Copyright &copy; CréaLogiciel 2016</p>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- tarifs Section -->
+        <section id="tarifs" class=" content-section text-center">
+
+            <!-- Emplacement de l'autocompletion -->
+            
+
+            <div class="col-lg-4 col-lg-offset-4 retour_tarifs">
+                <center><button id="retour_tarifs" name="retour_tarifs" class="btn btn-danger"><span class=" fa fa-chevron-left"></span> Retour</button></center>
+            </div>
+
+            <!-- Copyright de la page tarifs -->
+            <footer class="copy_tarifs">
+                <p>Copyright &copy; CréaLogiciel 2016</p>
+            </footer>
+
+        </section>
+
+        <!-- Compte Section -->
+        <section id="compte" class="content-section text-center">
+            <div class="compte-section">
+                <form class="form-horizontal">
+                    <fieldset>
+
+                        <!-- Barre de recherche + bouton -->
+                        <div class="form-group">
+                            <label class="col-lg-4 control-label"></label> 
+                            <div class="col-lg-4">
+                                <input id="recherche" name="recherche" placeholder="Nom Prénom" class="form-control input-md" type="text">
+                                <a href="#" id="btn_rech" class="btn btn-primary btn-danger"><span class="fa fa-search"></span> Rechercher</a><br>
+                                <a href="#" id="retour_recharge" class="btn btn-primary btn-danger" style="margin-top:5px"><span class="glyphicon glyphicon-chevron-left"></span> Retour</a>
+                            </div>
+                        </div>
+
+                        <!-- Affichage du Nom et du Prénom -->
+                        <div class="form-group" id="div_elev">
+                            <label class="col-lg-3 control-label" for="nom">Nom :</label>
+
+                            <label class="col-lg-2 control-label" for="prenom">Prenom :</label>
+                            <label class="col-lg-2 control-label">Photo :</label>
+                            <!--<img src="../img/photo_elev.png" style="width:100px; height:150px;">-->
+                        </div>
+
+                        <!-- Liste déroulante pour le régime + Affichage du Solde -->
+                        <div class="form-group" id="div_info">
+                            <label class="col-lg-3 control-label" for="regime">Régime</label>
+                            <div class="col-lg-1">
+                                <select id="regime" name="regime" class="form-control">
+                                    <option value="int">Interne</option>
+                                    <option value="dp">Demi-Pensionnaire</option>
+                                    <option value="ext">Externe</option>
+                                </select>
+                            </div>
+
+                            <label class="col-lg-1 control-label" for="solde">Solde :</label>
+                        </div>
+
+                        <!-- Checkboxe Fidélisé -->
+                        <div class="form-group" id="div_fidchbx">
+                            <label class="col-lg-3 control-label" for="fid_chbx"></label>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label for="fid_chbx">
+                                        <input name="fid_chbx" id="fid_chbx" autocomplete="off" type="checkbox" onclick="affich_tabl()">
+                                        Fidélisé
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class=" col-lg-7 col-lg-offset-2" id="zone_fid">
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>Lundi</th>
+                                        <th>Mardi</th>
+                                        <th>Mercredi</th>
+                                        <th>Jeudi</th>
+                                        <th>Vendredi</th>
+                                        <th>Samedi</th>
+                                        <th>Dimanche</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Midi</td>
+                                        <td><input name="lm" id="lm" type="checkbox"></td>
+                                        <td><input name="mam" id="mam" type="checkbox"></td>
+                                        <td><input name="mem" id="mem" type="checkbox"></td>
+                                        <td><input name="jm" id="jm" type="checkbox"></td>
+                                        <td><input name="vm" id="vm" type="checkbox"></td>
+                                        <td><input name="sm" id="sm" type="checkbox"></td>
+                                        <td><input name="dm" id="dm" type="checkbox"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soir</td>
+                                        <td><input name="lm" id="lm" type="checkbox"></td>
+                                        <td><input name="mam" id="mam" type="checkbox"></td>
+                                        <td><input name="mem" id="mem" type="checkbox"></td>
+                                        <td><input name="jm" id="jm" type="checkbox"></td>
+                                        <td><input name="vm" id="vm" type="checkbox"></td>
+                                        <td><input name="sm" id="sm" type="checkbox"></td>
+                                        <td><input name="dm" id="dm" type="checkbox"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Checkboxe Historique -->
+                        <div class="form-group" id="div_histchbx">
+                            <label class="col-lg-3 control-label" for="hist_chbx"></label>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label for="hist_chbx-0">
+                                        <input name="hist_chbx" id="hist_chbx" autocomplete="off" type="checkbox">
+                                        Historique
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-lg-offset-2" id="zone_hist">
+                                <table>
+                                    <th>Date</th>
+                                    <th>Heure</th>
+                                    <th>Prix</th>
+                                <!--<th><a href="#" class="btn btn-danger"><span class="fa fa-chevron-down"></span> Plus</a></th>-->
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Checkboxe Crédit -->
+                        <div class="form-group" id="div_credchbx">
+                            <label class="col-lg-3 control-label" for="hist_chbx"></label>
+                            <div class="col-lg-2">
+                                <div class="checkbox">
+                                    <label for="hist_chbx-0">
+                                        <input name="cred_chbx" id="cred_chbx" autocomplete="off" type="checkbox">
+                                        Crédit
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <!-- Rechargement Section -->
+        <section id="rechargement" class="content-section text-center">
+            <div class="recharge-section">
+                <div class="col-lg-11 col-lg-offset-4">
+                    <div class="col-lg-4">
+                        <input id="search" name="search" placeholder="Nom Prénom" class="form-control input-md" type="text">
+                        <br>
+                        <a href="#" id="btn_recharge" class="btn btn-primary btn-danger"><span class="fa fa-search"></span> Rechercher</a>               
+                    </div>
+                </div>
+                <div class="contenu_recharge col-lg-11 col-lg-offset-4" id="contenu_recharge">
+                    <div class=" col-lg-4 form-group">
+                        <label class="control-label" for="montant">Recharge</label>
+                        <br>
+                        <input id="montant" name="montant" placeholder="Montant Recharge" class="form-control input-md" type="number"><br>
+                        <button id="valid_recharge" class="btn btn-primary btn-danger"><span class="fa fa-check"></span> Valider</button>
+                    </div>
+
+                </div>
+                <a href="#" id="retour_recharge" class="btn btn-primary btn-danger" style="margin-top:5px"><span class="glyphicon glyphicon-chevron-left"></span> Retour</a>
+            </div>
+        </section>
+
+        <!-- Inscriptions/Inscrits -->
+        <section id="ins" class="container content-section text-center">
+            <div class="row">
+                <div class="col-lg-6 col-lg-offset-0">
+                    <h2>Inscrits</h2>
+
+                    <form class="form-horizontal" id="choix_regime">
+                        <fieldset>
+
+                            <!-- Form Name -->
+                            <legend></legend>
+
+                            <!-- Select Basic -->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="selectbasic"></label>
+                                <div class="col-lg-4">
+                                    <select id="selectbasic" name="selectbasic" class="form-control">
+                                        <option value="int_inscription">Interne</option>
+                                        <option value="dp_inscription">Demi Pensionnaire</option>
+                                        <option value="ext_inscription">Externe</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Bouton Valider choix régime -->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="valid_inscrits"></label>
+                                <div class="col-lg-4">
+                                    <button id="valid_inscrits" name="valid_inscrits" class="btn btn-danger"><span class="fa fa-check"></span> Valider</button>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+                    <div id="choix_class">
+                        <form class="form-horizontal">
+                            <fieldset>
+
+                                <!-- Select Basic -->
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label" for="selectbasic"></label>
+                                    <div class="col-lg-4">
+                                        <select id="selectbasic" name="selectbasic" class="form-control">
+                                            <option value="1_sio">TS1 SIO</option>
+                                            <option value="2_sio">TS2 SIO</option>
+                                            <option value="1_asg">TS1 ASG</option>
+                                            <option value="2_asg">TS2 ASG</option>
+                                            <option value="1_tour">TS1 Tourisme</option>
+                                            <option value="2_tour">TS2 Tourisme</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- bouton valider choix classe -->
+                                <div class="form-group">
+                                    <label class="col-lg-4 control-label" for="valid_inscription"></label>
+                                    <div class="col-lg-4">
+                                        <button id="valid_inscrits" name="valid_inscription" class="btn btn-danger"><span class="fa fa-check"></span> Valider</button>
+                                        <a href="#" id="retour_inscrits" class="btn btn-primary btn-danger" style="margin-top:5px"><span class="glyphicon glyphicon-chevron-left"></span> Retour</a>
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+
+                    </div>
+
+                </div>
+                <!-- Liste de nom des élèves choisis au hasard -->
+                <div id="list_elev" class="col-lg-offset-6" style="padding-top: 55px;">
+                    - Frodon Saké TS1 SIO<br>
+                    - Sam Gamgie TS1 SIO<br>
+                    - Gandalf TS1 SIO<br>
+                    - Dark Vador TS2 SIO<br>
+                    - Maître Yoda TS2 SIO<br>
+                    - Comte Dooku TS2 SIO<br>
+                    - Ezio Auditore  TS1 ASG<br>
+                    - Desmond Miles TS1 ASG<br>
+                    - Altaïr Ibn La-Ahad TS1 ASG<br>
+                    - Gimli TS2 ASG<br>
+                    - Legolas TS2 ASG<br>
+                    - Galadriel TS2 ASG<br>
+                    - Dark Maul TS1 Tourisme<br>
+                    - Anakin Skywalker TS1 Tourisme<br>
+                    - Leia Organa TS1 Tourisme<br>
+                    - Arno Dorian TS2 Tourisme<br>
+                    - Connor TS2 Tourisme<br>
+                    - Edward Kenway TS2 Tourisme<br>
+                </div>
+                <div id="inscription">
+                    <h2>Inscriptions</h2>
+                    <form class="form-horizontal content-section" style="font-family: Montserrat; padding-top: 0px;">
+                        <fieldset>
+
+                            <!-- Form Name -->
+                            <legend></legend>
+
+                            <!-- Nom input-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="nom">Nom</label>  
+                                <div class="col-lg-4">
+                                    <input id="nom" name="nom" placeholder="Nom" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- Prénom input-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="prenom">Prénom</label>  
+                                <div class="col-lg-4">
+                                    <input id="prenom" name="prenom" placeholder="Prénom" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- ID élève input a voir surement en auto incrémentation désormais dans la base-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="id_elev">ID</label>  
+                                <div class="col-lg-4">
+                                    <input id="id_elev" name="id_elev" placeholder="ID" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- Classe input-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="classe">Classe</label>  
+                                <div class="col-lg-4">
+                                    <input id="classe" name="classe" placeholder="Classe" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- Choix du régime inscription -->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="statut">Statut</label>
+                                <div class="col-lg-4">
+                                    <select id="statut" name="statut" class="form-control">
+                                        <option value="Interne">Interne</option>
+                                        <option value="Demi Pensionnaire">Demi Pensionnaire</option>
+                                        <option value="Externe">Externe</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Choix du montant-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="montant_cred">Montant à créditer</label>  
+                                <div class="col-lg-4">
+                                    <input id="montant_cred" name="montant_cred" placeholder="Montant" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+
+                            <!-- Date de naissance-->
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label" for="dna">Date de naissance</label>  
+                                <div class="col-lg-4">
+                                    <input id="dna" name="dna" placeholder="Date de naissance" class="form-control input-md" type="text">
+
+                                </div>
+                            </div>
+                            <center><button id="valid_inscription" name="valid_inscription" class="btn btn-danger"><span class="fa fa-check"></span> Valider</button></center>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="col-lg-4 retour_ins">
+                    <center><button id="retour_ins" name="retour_ins" class="btn btn-danger"><span class=" fa fa-chevron-left"></span> Retour</button></center>
+                </div>
+                <!-- Footer -->
+                <footer class="copy_ins">
+                    <p>Copyright &copy; CréaLogiciel 2016</p>
+                </footer>
+            </div>
+        </section>
+
+        <!-- jQuery -->
+        <script src="vendor/jquery/jquery.js"></script>
+        <script type="text/javascript" src="./_js/jquery-1.3.2.js"></script>
+        <script type="text/javascript" src="_js/jquery-1.12.2.js"></script>
+        <script type="text/javascript" src="js/jQ_index.js"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+        <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+        <!-- Theme JavaScript -->
+        <script src="js/grayscale.min.js"></script>
+
+    </body>
+
+</html>
+<script type="text/javascript">
+    jQuery('#zone_fid').hide();
+    jQuery('#fid_chbx').click(function()
+                              {
+        jQuery('#zone_fid').toggle();
+        return true;
+    });
+
+    jQuery('#zone_hist').hide();
+    jQuery('#hist_chbx').click(function()
+                               {
+        jQuery('#zone_hist').toggle();
+        return true;
+    });
+</script>
